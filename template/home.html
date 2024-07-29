@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% include 'cdnlines.html'%}
+</head>
+<body>
+    <nav class="nav">
+        <h1></h1>
+    </nav>
+    <center><h1>Welcome to Result Details</h1></center>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Email</th>
+                <th>Marks1</th>
+                <th>Marks2</th>
+                <th>Marks3</th>
+                <th>Marks4</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for s in std %}
+            <tr>
+                <td>{{s.firstname}}</td>
+                <td>{{s.lastname}}</td>
+                <td>{{s.email}}</td>
+                <td>{{s.marks1}}</td>
+                <td>{{s.marks2}}</td>
+                <td>{{s.marks3}}</td>
+                <td>{{s.marks4}}</td>
+             
+                
+
+            </tr>
+            
+            {% endfor %}
+            
+        </tbody>
+        
+    </table>
+    <a href="{% url 'logout'%}" class="btn btn-danger">logout here</a>
+</body>
+</html>
